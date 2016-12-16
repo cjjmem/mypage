@@ -21,6 +21,8 @@ composer gobal require phpdocumentor/phpdocumentor
 ### 生成文档
 ```php
 phpdoc -d "绝对路径"
+
+phpdoc -d "D:\phpdoc\1" -t "D:\phpdoc\1"  -o "HTML:frames:phpedit"
 ```
 
 ## 使用说明
