@@ -121,6 +121,25 @@ config.AddOrSetConfigValue("isOnline", false); //是否开机启动
 config.AddOrSetConfigValue("isTop", false);  //窗口总在最上层
 config.AddOrSetConfigValue("isAlarm", false); //报警
 config.AddOrSetConfigValue("isSchema", false);    //允许 isSchema
+
+//使用带参数的属性快速保存配置信息
+config["string"] = "这是一条文本记录";
+//使用带参数的属性快速保存非字符串
+config["intX"] = 45.ToString();
+config["Date"] = DateTime.Now.ToString();
+//保存配置信息的一般方式
+config.AddOrSetConfigValue("intY", 88);
+config.AddOrSetConfigValue("bool", true);
+//读取特定类型的数据
+var x = config.GetConfigValueInt("intX");
+//使用TryParse类方法读取特定类型的数据
+int y;
+config.TryParseConfigValue("intY", out y);
+DateTime dt;
+config.TryParseConfigValue("Date", out dt);
+//使用GetConfigValueXXX方法读取特定类型的数据
+bool b = config.GetConfigValueBool("bool");
+
 ```
 
 ```c#
