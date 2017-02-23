@@ -6,7 +6,9 @@
 ```
 如果有安装的PHP包，先删除他们
 
-```angular2html
+```xshell
+yum remove php.x86_64 php-cli.x86_64 php-common.x86_64 php-gd.x86_64 php-ldap.x86_64 php-mbstring.x86_64 php-mcrypt.x86_64 php-mysql.x86_64 php-pdo.x86_64
+
 yum remove php.x86_64 php-cli.x86_64 php-common.x86_64 php-gd.x86_64 php-ldap.x86_64 php-mbstring.x86_64 php-mcrypt.x86_64 php-mysql.x86_64 php-pdo.x86_64
 ```
 
@@ -27,31 +29,31 @@ rpm -e  上面搜索到的包即可
 ```
 ## 3.运行yum install
 
-```angular2html
+```xshell
 yum install php55w.x86_64 php55w-cli.x86_64 php55w-common.x86_64 php55w-gd.x86_64 php55w-ldap.x86_64 php55w-mbstring.x86_64 php55w-mcrypt.x86_64 php55w-mysql.x86_64 php55w-pdo.x86_64 php55w-xml.x86_64
 
 yum install php56w.x86_64 php56w-cli.x86_64 php56w-common.x86_64 php56w-gd.x86_64 php56w-ldap.x86_64 php56w-mbstring.x86_64 php56w-mcrypt.x86_64 php56w-mysql.x86_64 php56w-pdo.x86_64 php56w-xml.x86_64
 
 ```
 
-```angular2html
+```xshell
 yum install php70w.x86_64 php70w-cli.x86_64 php70w-common.x86_64 php70w-gd.x86_64 php70w-ldap.x86_64 php70w-mbstring.x86_64 php70w-mcrypt.x86_64 php70w-mysql.x86_64 php70w-pdo.x86_64 php70w-xml.x86_64
 ```
 
 ## 4.安装PHP FPM
-```angular2html
+```xshell
 yum install php55w-fpm
 yum install php56w-fpm
 yum install php70w-fpm
 ```
 
 ## 5.配置nginx 重启php-fpm
-```angular2html
+```xshell
 /etc/init.d/php-fpm start
 ```
 
 查看php-fpm错误日志
-```angular2html
+```xshell
 cd /var/log/php-fpm/
 
 tail -f 日志名
